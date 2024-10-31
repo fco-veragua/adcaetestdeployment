@@ -1,0 +1,10 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#buttons-div {
+  display: flex;
+  gap: 10px;
+}

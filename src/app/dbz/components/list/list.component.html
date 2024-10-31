@@ -1,0 +1,35 @@
+<h4>{{ title }}</h4>
+<ul class="list-group">
+  <!--
+  >> VARIABLES ESPECIALES ngFor <<
+    i, index = saber el índice de los elementos
+    isFirst, first = saber si es el primer elemento
+    isLast, last = saber si es el último elemento
+    isEven, even = saber si el elemento es par
+    isOdd, odd = sabes si el elemento es impar
+   -->
+  <li
+    *ngFor="
+      let character of characterList;
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd
+    "
+    class="list-group-item"
+    [ngClass]="{
+      'list-group-item-danger': isLast
+    }"
+  >
+    <div>
+      {{ i + 1 }}.- {{ character.name }} -
+      <strong>{{ character.power }}</strong>
+    </div>
+    <div id="buttons-div">
+      <button type="submit" class="btn btn-danger btn-sm" (click)="deleteCharacterById(character.id)">
+        X
+      </button>
+    </div>
+  </li>
+</ul>

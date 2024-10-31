@@ -1,0 +1,30 @@
+<h4>{{ title }}</h4>
+<!-- Lo correcto para enviar los datos del form al backend, por ejemplo, es usar los eventos específicos para ello, no el evento de clic... -->
+<form (ngSubmit)="emitCharacter()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      [(ngModel)]="character.name"
+      name="name"
+      class="form-control"
+      id="name"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="power" class="form-label">Power</label>
+    <input
+      type="number"
+      [(ngModel)]="character.power"
+      name="power"
+      class="form-control"
+      id="power"
+    />
+  </div>
+  <!-- Aquí usé de ejemplo un evento de click para simular el envío de los datos del form... (click)="emitCharacter()" -->
+  <button type="submit" class="btn btn-primary" >
+    Add
+  </button>
+<!-- 
+  <pre>{{ character | json }}</pre> -->
+</form>

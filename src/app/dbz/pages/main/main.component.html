@@ -1,0 +1,13 @@
+<h2>{{ title }}</h2>
+<hr />
+<div class="row">
+  <div class="col">
+    <!-- No he necesitado exportarlo en el fichero de module debido a que es un componente de dicho módulo -->
+    <!-- dbz-list-component -->
+    <dbz-list-component [characterList]="characters" (onSelectCharacter)="onDeleteCharacter($event)"></dbz-list-component>
+  </div>
+  <div class="col">
+    <!-- dbz-addcharacter-component -->
+    <dbz-addcharacter-component (onNewCharacter)="onNewCharacter($event)"></dbz-addcharacter-component>
+  </div>
+</div>

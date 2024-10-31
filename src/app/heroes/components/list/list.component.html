@@ -1,0 +1,34 @@
+<h3>Heroes List</h3>
+
+<div id="delete-section">
+  <!--
+    else: si no se cumple la condición del if, hago else (apuntando a una referencia local - ng-template) 
+    -->
+  <h4 *ngIf="deletedHero; else notDeleted">
+    Last Hero Deleted <small class="text-danger">{{ deletedHero }}</small>
+  </h4>
+
+  <!--
+  ng-template: este elemento esperará "escondido" hasta que yo especifique cuando se mostrará 
+   -->
+  <ng-template #notDeleted>
+    <h4>Not deleted...</h4>
+  </ng-template>
+
+  <!--
+  solo muestro el button si tengo heroes que mostrar...
+  -->
+  <button
+    *ngIf="heroNames.length > 0"
+    (click)="removeLastHero()"
+    class="btn btn-danger"
+  >
+    Delete Last Hero
+  </button>
+</div>
+
+<ul class="list-group">
+  <li *ngFor="let heroName of heroNames" class="list-group-item">
+    {{ heroName }}
+  </li>
+</ul>
